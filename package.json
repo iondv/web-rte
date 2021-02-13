@@ -1,0 +1,35 @@
+{
+  "name": "@iondv/web-rte",
+  "license": "Apache License 2.0",
+  "engines": {
+    "node": ">=13"
+  },
+  "bin": {
+    "cluster": "bin/cluster.js",
+    "www": "bin/www.js",
+    "job-runner": "bin/job-runner.js",
+    "job": "bin/job.js",
+    "schedule": "bin/schedule.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "bugs": {
+    "url": "https://github.com/iondv/framework/issues"
+  },
+  "private": true,
+  "repository": {
+    "url": "https://github.com/iondv/web-rte.git",
+    "type": "git"
+  },
+  "homepage": "https://iondv.com",
+  "version": "2.0.0",
+  "dependencies": {
+    "@iondv/commons": "iondv/commons#semver:^2.0.1",
+    "@iondv/core": "iondv/core#semver:^2.0.3",
+    "@iondv/i18n": "iondv/i18n#semver:^0.0.1",
+    "@iondv/web": "iondv/web#semver:^2.0.2",
+    "fast-clone": "^1.5.13",
+    "merge": "^2.1.0"
+  }
+}
