@@ -9,13 +9,17 @@ const { format } = require('util');
 const dispatcher = require('../dispatcher');
 const modules = require(path.join(process.cwd(), 'modules'));
 
-const { t } = i18n;
+const { t, lang } = i18n;
 
 const config_file = arguments[2] || process.env.ION_CONFIG_PATH;
 
-const { onStart, ...config } = require(path.isAbsolute(config_file) ? config_file : path.normalize(path.join(__dirname, config_file)));
+const { onStart, preLoad, ...config } = require(
+  path.isAbsolute(config_file)
+  ? config_file
+  : path.normalize(path.join(__dirname, config_file))
+);
 
-const LANG = config.lanf || process.env.ION_LANG || 'en';
+const LANG = config.lang || process.env.ION_LANG || 'en';
 
 lang(LANG);
 const { arguments } = require('commander');
@@ -66,7 +70,9 @@ if (cluster.isMaster) {
     killEmAll();
   });
 
-  let p = i18n.load(path.normalize(path.join(__dirname, '..', 'i18n')), null, LANG)
+  // i18n.load(path.normalize(path.join(__dirname, '..', 'i18n')), null, LANG)
+
+  let p = (typeof preLoad === 'function' ? preLoad() : Promise.resolve())
     .then(() => {
       sysLog.info(format(t('Starting ION application cluster (pid: %s)'), process.pid));
     });

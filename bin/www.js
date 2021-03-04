@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /* eslint no-process-exit:off, no-sync:off */
 'use strict';
+const path = require('path');
 const config_file = arguments[2] || process.env.ION_CONFIG_PATH;
 
-const { onStart, ...config } = require(path.isAbsolute(config_file) ? config_file : path.normalize(path.join(__dirname, config_file)));
+const { onStart, preLoad, ...config } = require(path.isAbsolute(config_file) ? config_file : path.normalize(path.join(__dirname, config_file)));
 const { log: { IonLogger } } = require('@iondv/commons');
-const { t } = require('@iondv/i18n');
 const { server } = require('@iondv/web');
 
 const dispatcher = require('../dispatcher');
