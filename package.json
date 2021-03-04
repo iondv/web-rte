@@ -6,10 +6,7 @@
   },
   "bin": {
     "cluster": "bin/cluster.js",
-    "www": "bin/www.js",
-    "job-runner": "bin/job-runner.js",
-    "job": "bin/job.js",
-    "schedule": "bin/schedule.js"
+    "www": "bin/www.js"
   },
   "directories": {
     "test": "test"
