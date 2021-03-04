@@ -9,7 +9,7 @@ const sysLog = new IonLogger(config.log || {});
 const { format } = require('util');
 const { t, lang } = i18n;
 
-let config_file = arguments[2] || process.env.ION_CONFIG_PATH || 'config.js';
+let config_file = process.argv[2] || process.env.ION_CONFIG_PATH || 'config.js';
 config_file = path.isAbsolute(config_file)
   ? config_file
   : path.normalize(path.join(process.cwd(), config_file));
