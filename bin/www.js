@@ -7,7 +7,7 @@ const { log: { IonLogger } } = require('@iondv/commons');
 const path = require('path');
 const fs = require('fs');
 
-let config_file = process.argv[2] || process.env.ION_CONFIG_PATH || 'config.js';
+let config_file = process.argv[2] || process.env.ION_CONFIG_PATH || 'config';
 
 config_file = path.isAbsolute(config_file)
   ? config_file
