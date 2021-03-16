@@ -4,6 +4,8 @@ const path = require('path');
 const copydir = require('copy-dir');
 const { exec } = require('child_process');
 
+console.log('post installation script entered');
+
 if (process.cwd() !== __dirname) {
   console.log('installing web ui default theme');
   copydir(path.join(__dirname, 'view'), path.join(process.cwd(), 'view/platform'), { cover: true }, (err) => {
