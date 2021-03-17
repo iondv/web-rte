@@ -22,5 +22,6 @@ server({
   sysLog,
   onStart,
   dispatcher,
-  modules
+  modules,
+  baseDir: path.normalize(path.join(__dirname, '..'))
 });

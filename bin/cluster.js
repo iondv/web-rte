@@ -89,6 +89,7 @@ if (cluster.isMaster) {
     config,
     sysLog,
     dispatcher,
-    modules
+    modules,
+    baseDir: path.normalize(path.join(__dirname, '..'))
   });
 }
