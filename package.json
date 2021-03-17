@@ -9,7 +9,7 @@
     "www": "bin/www.js"
   },
   "scripts": {
-    "install": "node ./postinstall.js"
+    "install": "cd view/default/static && npm install"
   },
   "directories": {
     "test": "test"
