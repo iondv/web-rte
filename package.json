@@ -9,7 +9,7 @@
     "www": "bin/www.js"
   },
   "scripts": {
-    "postinstall": "echo 'ololo'"
+    "install": "node ./postinstall.js"
   },
   "directories": {
     "test": "test"
