@@ -12,7 +12,7 @@ if (process.cwd() !== __dirname) {
     if (err) {
       console.error(err);
     }
-    const inst = exec(`npm install`, { cwd: `${process.cwd}/view/platform/default/static` });
+    const inst = exec(`npm install`, { cwd: path.join(process.cwd(), '/view/platform/default/static') });
     inst.on('close', () => {
       process.exit(0);
     });
